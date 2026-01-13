@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String        @id @default(cuid())
+  name         String
+  authSessions AuthSession[]
+  customers    Customer[]
+  sales        Sale[]
+}
+
+model AuthSession {
+  id     String @id @default(cuid())
+  userId String
+  token  String @unique
+  status String @default("active")
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model Customer {
+  id     String @id @default(cuid())
+  name   String
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+  sales  Sale[]
+}
+
+model Sale {
+  id         String   @id @default(cuid())
+  customerId String
+  userId     String
+  customer   Customer @relation(fields: [customerId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+}

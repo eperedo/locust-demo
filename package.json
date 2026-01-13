@@ -1,0 +1,35 @@
+{
+  "name": "apprunn",
+  "version": "1.0.0",
+  "main": "sales.js",
+  "scripts": {
+    "sales": "ts-node src/sales.ts",
+    "acl": "ts-node src/acl.ts",
+    "build": "tsc",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "db:generate": "prisma generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@libsql/client": "0.17.0",
+    "@prisma/adapter-better-sqlite3": "7.2.0",
+    "@prisma/adapter-libsql": "7.2.0",
+    "@prisma/client": "7.2.0",
+    "better-sqlite3": "12.6.0",
+    "dotenv": "17.2.3",
+    "express": "^4.21.0",
+    "prisma": "7.2.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13",
+    "@types/express": "5.0.6",
+    "@types/node": "25.0.6",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3"
+  }
+}

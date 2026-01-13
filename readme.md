@@ -25,3 +25,21 @@ Running migrations
 ```shell
 npm run db:migrate
 ```
+
+### Locust
+
+Start nodejs demo services
+
+```shell
+npm run acl
+```
+
+```shell
+npm run sales
+```
+
+Start locust with docker compose
+
+```shell
+docker compose up -d
+```
